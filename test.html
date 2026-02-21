@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MySQL Documentation</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+<header>
+    <h1>mysal doc</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#database">MySQL Database</a></li>
+        <li><a href="#createdb">Create DB</a></li>
+        <li><a href="#dropdb">Drop DB</a></li>
+        <li><a href="#createtable">Create Table</a></li>
+        <li><a href="#droptable">Drop Table</a></li>
+        <li><a href="#altertable">Alter Table</a></li>
+        <li><a href="#select">SELECT</a></li>
+        <li><a href="#where">WHERE</a></li>
+        <li><a href="#logic">AND OR NOT</a></li>
+        <li><a href="#orderby">ORDER BY</a></li>
+        <li><a href="#insert">INSERT INTO</a></li>
+        <li><a href="#null">NULL Values</a></li>
+        <li><a href="#update">UPDATE</a></li>
+        <li><a href="#delete">DELETE</a></li>
+        <li><a href="#limit">LIMIT</a></li>
+        <li><a href="#minmax">MIN MAX</a></li>
+        <li><a href="#aggregate">COUNT AVG SUM</a></li>
+        <li><a href="#like">LIKE</a></li>
+        <li><a href="#wildcards">Wildcards</a></li>
+        <li><a href="#in">IN</a></li>
+        <li><a href="#between">BETWEEN</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section id="database">
+<h2>MySQL Database</h2>
+<p>MySQL is a relational database management system used to store structured data.</p>
+</section>
+
+<section id="createdb">
+<h2>Create Database</h2>
+<p>Create a new database.</p>
+<pre>CREATE DATABASE db_name;</pre>
+<pre>CREATE DATABASE school;</pre>
+</section>
+
+<section id="dropdb">
+<h2>Drop Database</h2>
+<p>Deletes a database permanently.</p>
+<pre>DROP DATABASE db_name;</pre>
+<pre>DROP DATABASE school;</pre>
+</section>
+
+<section id="createtable">
+<h2>Create Table</h2>
+<p>Create a table inside a database.</p>
+<pre>
+CREATE TABLE table_name (
+  column1 datatype,
+  column2 datatype
+);
+</pre>
+<pre>
+CREATE TABLE students (
+ id INT PRIMARY KEY,
+ name VARCHAR(50),
+ age INT
+);
+</pre>
+</section>
+
+<section id="droptable">
+<h2>Drop Table</h2>
+<p>Delete a table.</p>
+<pre>DROP TABLE table_name;</pre>
+<pre>DROP TABLE students;</pre>
+</section>
+
+<section id="altertable">
+<h2>Alter Table</h2>
+<p>Modify table structure.</p>
+<pre>ALTER TABLE table_name ADD column datatype;</pre>
+<pre>ALTER TABLE students ADD email VARCHAR(100);</pre>
+</section>
+
+<section id="select">
+<h2>SELECT</h2>
+<p>Retrieve data from a table.</p>
+<pre>SELECT column FROM table;</pre>
+<pre>SELECT * FROM students;</pre>
+</section>
+
+<section id="where">
+<h2>WHERE</h2>
+<p>Filter records.</p>
+<pre>SELECT * FROM table WHERE condition;</pre>
+<pre>SELECT * FROM students WHERE age = 20;</pre>
+</section>
+
+<section id="logic">
+<h2>AND OR NOT</h2>
+<p>Combine conditions.</p>
+<pre>
+SELECT * FROM students 
+WHERE age = 20 AND name = 'Ali';
+</pre>
+</section>
+
+<section id="orderby">
+<h2>ORDER BY</h2>
+<p>Sort results.</p>
+<pre>SELECT * FROM students ORDER BY name ASC;</pre>
+</section>
+
+<section id="insert">
+<h2>INSERT INTO</h2>
+<p>Insert data.</p>
+<pre>
+INSERT INTO students (id,name,age)
+VALUES (1,'Ali',22);
+</pre>
+</section>
+
+<section id="null">
+<h2>NULL Values</h2>
+<p>Check missing values.</p>
+<pre>SELECT * FROM students WHERE email IS NULL;</pre>
+</section>
+
+<section id="update">
+<h2>UPDATE</h2>
+<p>Modify existing records.</p>
+<pre>
+UPDATE students 
+SET age = 23 
+WHERE id = 1;
+</pre>
+</section>
+
+<section id="delete">
+<h2>DELETE</h2>
+<p>Delete records.</p>
+<pre>DELETE FROM students WHERE id = 1;</pre>
+</section>
+
+<section id="limit">
+<h2>LIMIT</h2>
+<p>Limit returned rows.</p>
+<pre>SELECT * FROM students LIMIT 5;</pre>
+</section>
+
+<section id="minmax">
+<h2>MIN and MAX</h2>
+<pre>SELECT MIN(age) FROM students;</pre>
+<pre>SELECT MAX(age) FROM students;</pre>
+</section>
+
+<section id="aggregate">
+<h2>COUNT, AVG, SUM</h2>
+<pre>SELECT COUNT(*) FROM students;</pre>
+<pre>SELECT AVG(age) FROM students;</pre>
+<pre>SELECT SUM(age) FROM students;</pre>
+</section>
+
+<section id="like">
+<h2>LIKE</h2>
+<p>Search pattern.</p>
+<pre>SELECT * FROM students WHERE name LIKE 'A%';</pre>
+</section>
+
+<section id="wildcards">
+<h2>Wildcards</h2>
+<p>% represents multiple characters, _ represents one character.</p>
+<pre>SELECT * FROM students WHERE name LIKE '_li';</pre>
+</section>
+
+<section id="in">
+<h2>IN</h2>
+<p>Match multiple values.</p>
+<pre>SELECT * FROM students WHERE age IN (20,21,22);</pre>
+</section>
+
+<section id="between">
+<h2>BETWEEN</h2>
+<p>Filter range.</p>
+<pre>SELECT * FROM students WHERE age BETWEEN 18 AND 25;</pre>
+</section>
+
+</main>
+
+<footer>
+    <p>MySQL Documentation Page</p>
+</footer>
+
+</body>
+</html>
